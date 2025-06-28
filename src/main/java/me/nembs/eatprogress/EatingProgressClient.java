@@ -37,7 +37,8 @@ public class EatingProgressClient implements ClientModInitializer {
             int useTimeLeft = player.getItemUseTimeLeft();
 
             if (maxUseTime > 0) {
-                float progress = 1.0F - (useTimeLeft / (float) maxUseTime);
+                float progress = 1.0f - (useTimeLeft / (float) maxUseTime);
+                progress = Math.min(progress, 1.0f);
                 renderProgressText(drawContext, progress);
             }
         }
