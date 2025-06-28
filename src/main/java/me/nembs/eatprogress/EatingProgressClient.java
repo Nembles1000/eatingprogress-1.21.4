@@ -6,6 +6,7 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 
 public class EatingProgressClient implements ClientModInitializer {
     @Override
@@ -21,6 +22,11 @@ public class EatingProgressClient implements ClientModInitializer {
 
         if (player != null && player.isUsingItem()) {
             ItemStack itemStack = player.getActiveItem();
+
+            if (itemStack.isOf(Items.SHIELD)) {
+                return;
+            }
+
             int maxUseTime = itemStack.getMaxUseTime(player);
             int useTimeLeft = player.getItemUseTimeLeft();
 
