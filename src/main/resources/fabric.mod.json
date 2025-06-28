@@ -1,0 +1,37 @@
+{
+	"schemaVersion": 1,
+	"id": "eatingprogress",
+	"version": "${version}",
+	"name": "EatingProgress",
+	"description": "Shows percentage of eating progress",
+	"authors": [
+		"Nembles1000"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/eatingprogress/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"me.nembs.eatprogress.EatingProgress"
+		],
+		"client": [
+			"me.nembs.eatprogress.EatingProgressClient"
+		]
+	},
+	"mixins": [
+		"eatingprogress.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.14",
+		"minecraft": "~1.21.4",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
