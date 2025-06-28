@@ -26,6 +26,12 @@ public class EatingProgressClient implements ClientModInitializer {
             if (itemStack.isOf(Items.SHIELD)) {
                 return;
             }
+            if (itemStack.isOf(Items.BOW)) {
+                return;
+            }
+            if (itemStack.isOf(Items.CROSSBOW)) {
+                return;
+            }
 
             int maxUseTime = itemStack.getMaxUseTime(player);
             int useTimeLeft = player.getItemUseTimeLeft();
